@@ -5,20 +5,18 @@ using UnityEngine.UI;
 
 public class PowerUp : MonoBehaviour {
 
-	public float JumpSpeed = 10f;
-	public float jumpBonus; 
-	public Rigidbody rb;
+    public float JumpSpeed = 10f;
+    public float jumpBonus;
+    public Rigidbody rb;
 
-	void Update () 
-	{
+    private void Update()
+    {
+        transform.Rotate(Vector3.up * Time.deltaTime);
 
-		transform.Rotate (Vector3.up, speed * Time.deltaTime);
+    }
 
-	}
-
-	void OnTriggerEnter ()
-	{
-		Destroy (gameObject);
-	}
-
+    private void OnTriggerEnter(Collider other)
+    {
+        Destroy(gameObject);
+    }
 }
