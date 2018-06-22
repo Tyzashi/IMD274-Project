@@ -5,12 +5,14 @@ using UnityEngine.UI;
 
 public class PowerUp : MonoBehaviour {
 
-    public float m_JumpSpeed = 100f;
-    public Rigidbody rb;
+    public AudioClip Blip;
+    public AudioSource Source;
 
 
     private void OnTriggerEnter(Collider other)
     {
+        AudioSource.PlayClipAtPoint(Blip, Camera.main.transform.position);
+        Score.score += 100;
         Destroy(gameObject);
     }
 }
