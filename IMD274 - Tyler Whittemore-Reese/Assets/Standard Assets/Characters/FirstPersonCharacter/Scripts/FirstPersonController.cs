@@ -83,6 +83,13 @@ namespace UnityStandardAssets.Characters.FirstPerson
             m_PreviouslyGrounded = m_CharacterController.isGrounded;
         }
 
+        private void OnTriggerEnter(Collider other)
+        {
+            if (other.gameObject.CompareTag("Powerup"))
+            {
+                m_JumpSpeed += 15;
+            }
+        }
 
         private void PlayLandingSound()
         {

@@ -5,15 +5,9 @@ using UnityEngine.UI;
 
 public class PowerUp : MonoBehaviour {
 
-    public float JumpSpeed = 10f;
-    public float jumpBonus;
+    public float m_JumpSpeed = 100f;
     public Rigidbody rb;
 
-    private void Update()
-    {
-        transform.Rotate(Vector3.up * Time.deltaTime);
-
-    }
 
     private void OnTriggerEnter(Collider other)
     {
